@@ -1,0 +1,10 @@
+{
+	"name": "Canelé Clicker",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AZERTY442005/Canele-Clicker.git"
+	},
+	"main": "index.html",
+  "licence": "CC-BY-NC-SA"
+}
