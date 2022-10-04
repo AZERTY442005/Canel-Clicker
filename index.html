@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 id="title">Canelé Clicker</h1>
+
+    <image>
+        <img src="images/canelé.jpg" alt="Canelé">
+    </image>
+    <p style="font-size: 26px">
+        <span>Vous avez </span>
+        <span id="caneles" style="color:#a4721f">0</span>
+        <span> canelés, </span>
+        <span id="fours" style="color:#a4721f">1</span>
+        <span> fours et </span>
+        <span id="robots" style="color:#a4721f">0</span>
+        <span> robots</span>
+    </p>
+
+    <button id="bt_cook" onclick="Cook()" type="button">
+        Cuisiner
+    </button>
+
+    <button id="bt_buyfurnace" type="button" disabled>
+        Acheter un four (25 canelés)
+    </button>
+    <button id="bt_buyrobot" type="button" disabled>
+        Acheter un robot (100 canelés)
+    </button>
+
+    <!-- Rectangular switch
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+    Rounded switch
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label> -->
+
+</body>
+
+<script>
+    function Function() {
+        document.onkeydown = function (e) {
+            var key = e.charCode || e.keyCode;
+            if ([32, 13].includes(key)) return false;
+        }
+        let Caneles = 0
+        let Fours = 1
+        let Robots = 0
+        document.getElementById("caneles").innerHTML = Caneles;
+        document.getElementById("fours").innerHTML = Fours;
+        document.getElementById("robots").innerHTML = Robots;
+
+        bt_cook.onclick = function () { // CUISINER CANELÉ
+            Caneles += Fours
+            if (Caneles >= 25) document.getElementById("bt_buyfurnace").disabled = false
+            document.getElementById("caneles").innerHTML = Caneles;
+        };
+
+        bt_buyfurnace.onclick = function () { // ACHETER FOURS
+            if (Caneles < 25) return
+            Caneles -= 25
+            Fours++
+            if (Caneles < 25) document.getElementById("bt_buyfurnace").disabled = true
+            if (Caneles < 100) document.getElementById("bt_buyrobot").disabled = true
+            document.getElementById("caneles").innerHTML = Caneles
+            document.getElementById("fours").innerHTML = Fours;
+        };
+
+        bt_buyrobot.onclick = function () { // ACHETER ROBOTS
+            if (Caneles < 100) return
+            Caneles -= 100
+            Robots++
+            if (Caneles < 25) document.getElementById("bt_buyfurnace").disabled = true
+            if (Caneles < 100) document.getElementById("bt_buyrobot").disabled = true
+            document.getElementById("caneles").innerHTML = Caneles;
+            document.getElementById("robots").innerHTML = Robots;
+        };
+
+        setInterval(() => {
+            Caneles += Robots
+            // Caneles++
+            if (Caneles >= 25) document.getElementById("bt_buyfurnace").disabled = false
+            if (Caneles >= 100) document.getElementById("bt_buyrobot").disabled = false
+            document.getElementById("caneles").innerHTML = Caneles;
+        }, 1000)
+        // }, 1500/Robots)
+    }
+    Function()
+</script>
+<!-- <script src="index.js" type="text/javascript"></script> -->
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+</html>

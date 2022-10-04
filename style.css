@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Neucha);
+
+body {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+/* h1 { */
+h1 {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid #5f021f;
+    padding: 10px;
+    /* color: red; */
+    color: #5f021f;
+    font-family: "Pacifico";
+}
+
+/* img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;o
+    width: 40%;
+} */
+/* img {
+    width: 400px;
+    height: auto;
+} */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+p {
+    line-height: 50px;
+    font-family: Neucha;
+}
+
+button {
+    font-family: Neucha;
+    font-size: 16px;
+    width: fit-content;
+    height: 40px;
+    padding: 7px 25px;
+    border: 2px solid #000;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+img {
+    width: auto;
+    /* width: 200px; */
+    height: auto;
+    position: relative;
+    /* place-self: auto center; */
+}
